@@ -72,10 +72,7 @@ head(OrdwayBirds_cleaned)
 
 
 ```{r}
-# Unique species in original data (including mis-spellings)
 unique_species_original <- unique(OrdwayBirds$SpeciesName)
-
-# Unique species in the clean list
 unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 
 
@@ -89,7 +86,7 @@ unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 
 ```{r}
 
-# Load the OrdwaySpeciesNames table
+
 data("OrdwayBirds", package = "dcData")
 
 # Correct the mis-spellings in SpeciesNames using inner_join
