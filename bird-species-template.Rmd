@@ -5,23 +5,32 @@ date: "DUE DATE "
 output: html_notebook
 ---
 
-
+sadasd
 # Set Up
 
 ```{r}
-# Load `tidyverse` and `dcData` packages
+
+# load packages
+library(tidyverse)
 
 
-
+# Load the BabyNames data into RStudio environment (from dcData package)
+data("OrdwayBirds", package = "dcData")
 
 # Load the `OrdwayBirds` data set into your RStudio environment from the `dcData` package
 
-
+OrdwayBirds <-
+  OrdwayBirds %>%
+  select( SpeciesName, Month, Day ) %>%
+  mutate( Month = as.numeric(as.character(Month)), 
+          Day = as.numeric(as.character(Day)))
 
 
 # Show a few commands used to inspect the data set a few different ways
 
-
+head(OrdwayBirds)
+str(OrdwayBirds)
+summary(OrdwayBirds)
 
 ```
 
@@ -34,11 +43,17 @@ When you're finished with this activity, you will have a graph that shows what t
 Before we begin, the book gives us some instructions to select a few key variables and clean up the date formatting.  Use the commands given in the book, but be sure to study the functions used so you know what is happening.  In this case, we select `SpeciesName`, `Month`, and `Day`. Then a `mutate()` command converts each variable to character, and then converts the resulting "character string" to a number.
 
 ```{r}
-# Get the data table & clean up dates (see Data Computing eBook)
 
-
+OrdwayBirds_cleaned <- OrdwayBirds %>%
+  select(SpeciesName, Month, Day) %>%
+  mutate(Month = as.numeric(as.character(Month)), 
+         Day = as.numeric(as.character(Day)))
 
 # Inspect resulting data
+head(OrdwayBirds_cleaned)
+
+
+
 
 
 ```
@@ -51,12 +66,15 @@ Before we begin, the book gives us some instructions to select a few key variabl
 
 
 ```{r}
-# unique species in original data (including mis-spellings)
+```
 
 
+```{r}
+# Unique species in original data (including mis-spellings)
+unique_species_original <- unique(OrdwayBirds$SpeciesName)
 
-# unique species in the clean list
-
+# Unique species in the clean list
+unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 
 
 ```
