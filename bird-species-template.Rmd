@@ -1,8 +1,10 @@
 ---
-title: "Activity: Bird Species"
+title: 'Activity: Bird Species'
 author: "Your Names Here"
-date: "DUE DATE "
-output: html_notebook
+date: 'DUE DATE '
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -49,7 +51,7 @@ OrdwayBirds_cleaned <- OrdwayBirds %>%
   mutate(Month = as.numeric(as.character(Month)), 
          Day = as.numeric(as.character(Day)))
 
-# Inspect resulting data
+
 head(OrdwayBirds_cleaned)
 
 
@@ -86,20 +88,19 @@ unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 
 
 ```{r}
-# Load the  dataset into your RStudio environment
-data("OrdwayBirds")
 
-# Inspect  dataset
-head(OrdwayBirds)
-str(OrdwayBirds)
+# Load the OrdwaySpeciesNames table
+data("OrdwayBirds", package = "dcData")
 
-# Perform inner join
-joined_data <- inner_join(OrdwayBirds_cleaned, OrdwayBirds, by = c("SpeciesName"))
+# Correct the mis-spellings in SpeciesNames using inner_join
+corrected <- OrdwayBirds_cleaned %>%
+  inner_join(OrdwaySpeciesNames) %>% 
+  select(Species = SpeciesNameCleaned, Month, Day) %>%
+  na.omit() %>%  # Clean up the missing values
+  distinct()  # Remove duplicate rows resulting from many-to-many relationship
 
-# Inspect the resulting data
-head(joined_data)
-str(joined_data)
-summary(joined_data)
+# Inspect the corrected data
+head(corrected)
 
 
 
@@ -136,19 +137,20 @@ major_species <- top_species %>%
 We now want to produce a month-by-month count for each of the major species, and then construct a chart to tell the story of what time of year the various species appear.
 
 ```{r}
+library(dplyr)
 # Prepare glyph-ready data table called `ByMonth`
 ByMonth <- joined_data %>%
-  group_by(SpeciesName, Month) %>%
+  group_by(SpeciesName, Month = Month.x) %>%
   count()
 
-# Use the ggplot template to generate the desired graph
-ggplot(ByMonth, aes(x = Month, y = n, fill = SpeciesName)) +
-  geom_bar(stat = "identity", position = "stack", width = 0.9) +
-  labs(x = "Month", y = "Count", title = "Monthly Bird Sightings") +
-  theme_minimal()
 
 
+ByMonth %>% 
+  ggplot(aes(x = Month, y = n, color = SpeciesName)) + 
+  geom_line()
 
+ByMonth %>% ggplot(aes(x=Month,y=n ,fill=SpeciesName)) +
+  geom_bar(stat='identity',position='stack', width=.9) 
 
 ```
 
@@ -156,39 +158,90 @@ Now use the ggplot template below to generate the desired graph. (Remark you can
 
 
 
-```{r}
-# ggplot commands
 
-ByMonth %>% 
-  ggplot(aes(x = Month, y = count, color = Species)) + 
-  geom_line()
-
-ByMonth %>% ggplot(aes(x=Month,y=count ,fill=Species)) +
-  geom_bar(stat='identity',position='stack', width=.9) 
-
-```
 
 According to the graph, we can answer the questions posed:
 
 ##### 1. Which species are present year-round?  
-
+1 American Goldfinch     
+2 Black-capped Chickadee 
+3 Blue Jay               
+4 White-breasted Nuthatch
 
 
 ##### 2. Which species are migratory, that is, primarily present in one or two seasons?
-
+1 ""                   
+ 2 "-lost-"             
+ 3 "-missing-"          
+ 4 "13:00:00"           
+ 5 "Acadian Flycatcher" 
+ 6 "American Golf Finch"
+ 7 "American Redfinch"  
+ 8 "American Redstart"  
+ 9 "American Robin"     
+10 "Arkansas Kingbird"
 
 
 
 ##### 3. What is the peak month for each major species? (bullet list)
+peak_month
+  SpeciesName           Month
+   <chr>                 <dbl>
+ 1 ""                       NA
+ 2 "-lost-"                 10
+ 3 "-missing-"              11
+ 4 "13:00:00"                2
+ 5 "Acadian Flycatcher"      8
+ 6 "American Gold Finch"     5
+ 7 "American Goldfinch"     10
+ 8 "American Golf Finch"     3
+ 9 "American Redfinch"       5
+10 "American Redstart"       5
 
 
 
-
-##### 4. Which major species are seen in good numbers for at least 6 months of the year?
+##### 4. Which major species are seen in good numbers for at least 6 months of the year
+1 American Goldfinch     
+2 Black-capped Chickadee 
+3 Blue Jay               
+4 White-breasted Nuthatch             
 
 
 
 ```{r}
+
+# Filter species present year-round
+species_year_round <- ByMonth %>%
+  group_by(SpeciesName) %>%
+  filter(n_distinct(Month) == 12) %>%
+  distinct(SpeciesName)
+
+# Filter species primarily present in one or two seasons
+species_present <- ByMonth %>%
+  group_by(SpeciesName) %>%
+  summarise(NumSeasons = n_distinct(Month)) %>%
+  filter(NumSeasons <= 2) %>%
+  distinct(SpeciesName)
+
+
+# Find the peak month for each major species
+peak_month <- ByMonth %>%
+  group_by(SpeciesName) %>%
+  filter(n == max(n)) %>%
+  select(SpeciesName, Month) %>%
+  distinct()
+
+
+
+
+# Filter for major species with sightings in at least 6 months
+major_species <- OrdwayBirds_cleaned %>%
+  group_by(SpeciesName) %>%
+  summarise(NumMonths = n_distinct(Month)) %>%
+  filter(NumMonths >= 6)
+
+
+
 
 ```
 
