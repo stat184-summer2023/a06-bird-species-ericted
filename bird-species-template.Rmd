@@ -136,12 +136,10 @@ major_species <- top_species %>%
 We now want to produce a month-by-month count for each of the major species, and then construct a chart to tell the story of what time of year the various species appear.
 
 ```{r}
-library(tidyverse)
-library(dplyr)
 # Prepare glyph-ready data table called `ByMonth`
-ByMonth <- joined_data %>%group_by(SpeciesName, Month) %>%count()
-
-
+ByMonth <- joined_data %>%
+  group_by(SpeciesName, Month) %>%
+  count()
 
 # Use the ggplot template to generate the desired graph
 ggplot(ByMonth, aes(x = Month, y = n, fill = SpeciesName)) +
