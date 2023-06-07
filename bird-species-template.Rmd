@@ -5,7 +5,7 @@ date: "DUE DATE "
 output: html_notebook
 ---
 
-sadasd
+
 # Set Up
 
 ```{r}
@@ -65,8 +65,8 @@ head(OrdwayBirds_cleaned)
 
 
 
-```{r}
-```
+
+
 
 
 ```{r}
@@ -86,15 +86,21 @@ unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 
 
 ```{r}
-# inspect OrdwaySpeciesNames
+# Load the  dataset into your RStudio environment
+data("OrdwayBirds")
 
+# Inspect  dataset
+head(OrdwayBirds)
+str(OrdwayBirds)
 
-# inner join
+# Perform inner join
+joined_data <- inner_join(OrdwayBirds_cleaned, OrdwayBirds, by = c("SpeciesName"))
 
+# Inspect the resulting data
+head(joined_data)
+str(joined_data)
+summary(joined_data)
 
-
-
-# inspect the data after the join
 
 
 ```
@@ -105,17 +111,20 @@ unique_species_cleaned <- unique(OrdwayBirds_cleaned$SpeciesName)
 We want to identify the top 5-6 bird species sighted at the Katherine Ordway Natural History Study Area.
 
 ```{r}
-# count sightings by species in descending order
+library(dplyr)
+library(tidyverse)
+# Count sightings by species in descending order
 
-
-
-
-# a hint in the text book recommends displaying the top 10 species to choose our threshold
+species_counts <- joined_data %>% count(SpeciesName, sort = TRUE)
+# Display the top 10 species
+top_species <- head(species_counts, 10)
 
 
 
 # define a sightings threshold; produce a table with only birds belonging to major species
-
+sightings_threshold <- 10
+major_species <- top_species %>%
+  filter(n >= sightings_threshold)
 
 
 
@@ -127,7 +136,19 @@ We want to identify the top 5-6 bird species sighted at the Katherine Ordway Nat
 We now want to produce a month-by-month count for each of the major species, and then construct a chart to tell the story of what time of year the various species appear.
 
 ```{r}
-# prepare glyph-ready data table called `ByMonth`
+library(tidyverse)
+library(dplyr)
+# Prepare glyph-ready data table called `ByMonth`
+ByMonth <- joined_data %>%group_by(SpeciesName, Month) %>%count()
+
+
+
+# Use the ggplot template to generate the desired graph
+ggplot(ByMonth, aes(x = Month, y = n, fill = SpeciesName)) +
+  geom_bar(stat = "identity", position = "stack", width = 0.9) +
+  labs(x = "Month", y = "Count", title = "Monthly Bird Sightings") +
+  theme_minimal()
+
 
 
 

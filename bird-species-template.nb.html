@@ -1755,36 +1755,13 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<p>sadasd # Set Up</p>
+<div id="set-up" class="section level1">
+<h1>Set Up</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIGxvYWQgcGFja2FnZXNcbmxpYnJhcnkodGlkeXZlcnNlKVxuXG5cbiMgTG9hZCB0aGUgQmFieU5hbWVzIGRhdGEgaW50byBSU3R1ZGlvIGVudmlyb25tZW50IChmcm9tIGRjRGF0YSBwYWNrYWdlKVxuZGF0YShcIk9yZHdheUJpcmRzXCIsIHBhY2thZ2UgPSBcImRjRGF0YVwiKVxuXG4jIExvYWQgdGhlIGBPcmR3YXlCaXJkc2AgZGF0YSBzZXQgaW50byB5b3VyIFJTdHVkaW8gZW52aXJvbm1lbnQgZnJvbSB0aGUgYGRjRGF0YWAgcGFja2FnZVxuXG5PcmR3YXlCaXJkcyA8LVxuICBPcmR3YXlCaXJkcyAlPiVcbiAgc2VsZWN0KCBTcGVjaWVzTmFtZSwgTW9udGgsIERheSApICU+JVxuICBtdXRhdGUoIE1vbnRoID0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoTW9udGgpKSwgXG4gICAgICAgICAgRGF5ID0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoRGF5KSkpXG5cblxuIyBTaG93IGEgZmV3IGNvbW1hbmRzIHVzZWQgdG8gaW5zcGVjdCB0aGUgZGF0YSBzZXQgYSBmZXcgZGlmZmVyZW50IHdheXNcblxuaGVhZChPcmR3YXlCaXJkcylcbnN0cihPcmR3YXlCaXJkcylcbnN1bW1hcnkoT3Jkd2F5QmlyZHMpXG5cbmBgYCJ9 -->
-<pre class="r"><code>
-# load packages
-library(tidyverse)
-
-
-# Load the BabyNames data into RStudio environment (from dcData package)
-data(&quot;OrdwayBirds&quot;, package = &quot;dcData&quot;)
-
-# Load the `OrdwayBirds` data set into your RStudio environment from the `dcData` package
-
-OrdwayBirds &lt;-
-  OrdwayBirds %&gt;%
-  select( SpeciesName, Month, Day ) %&gt;%
-  mutate( Month = as.numeric(as.character(Month)), 
-          Day = as.numeric(as.character(Day)))
-
-
-# Show a few commands used to inspect the data set a few different ways
-
-head(OrdwayBirds)
-str(OrdwayBirds)
-summary(OrdwayBirds)
-</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
 <div id="activity" class="section level1">
 <h1>Activity</h1>
 <p>When you’re finished with this activity, you will have a graph that
@@ -1819,10 +1796,6 @@ head(OrdwayBirds_cleaned)
 <h3>Step 1</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVbmlxdWUgc3BlY2llcyBpbiBvcmlnaW5hbCBkYXRhIChpbmNsdWRpbmcgbWlzLXNwZWxsaW5ncylcbnVuaXF1ZV9zcGVjaWVzX29yaWdpbmFsIDwtIHVuaXF1ZShPcmR3YXlCaXJkcyRTcGVjaWVzTmFtZSlcblxuIyBVbmlxdWUgc3BlY2llcyBpbiB0aGUgY2xlYW4gbGlzdFxudW5pcXVlX3NwZWNpZXNfY2xlYW5lZCA8LSB1bmlxdWUoT3Jkd2F5QmlyZHNfY2xlYW5lZCRTcGVjaWVzTmFtZSlcblxuXG5gYGAifQ== -->
 <pre class="r"><code># Unique species in original data (including mis-spellings)
 unique_species_original &lt;- unique(OrdwayBirds$SpeciesName)
@@ -1838,18 +1811,83 @@ unique_species_cleaned &lt;- unique(OrdwayBirds_cleaned$SpeciesName)
 <h3>Step 2</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnNwZWN0IE9yZHdheVNwZWNpZXNOYW1lc1xuXG5cbiMgaW5uZXIgam9pblxuXG5cblxuXG4jIGluc3BlY3QgdGhlIGRhdGEgYWZ0ZXIgdGhlIGpvaW5cblxuXG5gYGAifQ== -->
-<pre class="r"><code># inspect OrdwaySpeciesNames
-
-
-# inner join
-
-
-
-
-# inspect the data after the join
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb2FkIHRoZSBPcmR3YXlTcGVjaWVzTmFtZXMgZGF0YXNldCBpbnRvIHlvdXIgUlN0dWRpbyBlbnZpcm9ubWVudFxuZGF0YShcIk9yZHdheUJpcmRzXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Load the OrdwaySpeciesNames dataset into your RStudio environment
+data(&quot;OrdwayBirds&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogZGF0YSBzZXQg4oCYT3Jkd2F5QmlyZHPigJkgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Warning: data set ‘OrdwayBirds’ not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNwZWN0IE9yZHdheVNwZWNpZXNOYW1lcyBkYXRhc2V0XG5oZWFkKE9yZHdheUJpcmRzKVxuYGBgIn0= -->
+<pre class="r"><code># Inspect OrdwaySpeciesNames dataset
+head(OrdwayBirds)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Mywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyAzXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MVF2VTdETUJDKzVxZWhnVlNWdWpMd0FvbEFMQjBacW00d2tDSjFOWWxwSTRJZEphNkFpWGZoQ1htQ3d0azVWOFZTRWNQNS9IMTMzLzNkejFmWDhTb0dBQjhDendNL3hDK0VEOHRGT2dOa0VBd2dnSkgyYjVnME5aa0FFN1FoQmM1eUtkWVhlY1BhVnI0U0IzL0Vra1hGNi9JLzVHODF3RmgzdlRrMzllSGpTNy9ScDhYSC9GNTM2ZWdJSC9QTytxRmdMN3lqMVgwaVQvT0dGeFh2N2pCbTgyNmxVQnNDL3B5OU8zVkd1RXBtYXlYbWpQMUpBeTBtSEtHZHVBTVVOZXZzQUphTVM2Wlk5dFRxL2dBN1J4TEpSbFZTb01pYlV2VkQ4YUIxaU1sVzZNbkt0TmhzeFhONk5kTWRUTHkzaFB6dzRPLzNQYjF2cWhWU3JTRVg2MHJzcjFLelIxNFRHT01KekFXeXBxMkVzcXNnMjJWS0ttYno0a0xXbGpITHdlNEhQTjducWJBQ0FBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["SpeciesName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Month"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Day"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Song Sparrow","2":"7","3":"16","_rn_":"3"},{"1":"","2":"NA","3":"NA","_rn_":"4"},{"1":"Song Sparrow","2":"7","3":"16","_rn_":"5"},{"1":"Field Sparrow","2":"7","3":"16","_rn_":"6"},{"1":"Field Sparrow","2":"7","3":"16","_rn_":"7"},{"1":"Song Sparrow","2":"7","3":"16","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKE9yZHdheUJpcmRzKVxuYGBgIn0= -->
+<pre class="r"><code>str(OrdwayBirds)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MTU4Mjkgb2JzLiBvZiAgMyB2YXJpYWJsZXM6XG4gJCBTcGVjaWVzTmFtZTogY2hyICBcIlNvbmcgU3BhcnJvd1wiIFwiXCIgXCJTb25nIFNwYXJyb3dcIiBcIkZpZWxkIFNwYXJyb3dcIiAuLi5cbiAkIE1vbnRoICAgICAgOiBudW0gIDcgTkEgNyA3IDcgNyA3IDcgNyA3IC4uLlxuICQgRGF5ICAgICAgICA6IG51bSAgMTYgTkEgMTYgMTYgMTYgMTYgMTYgMTYgMTYgMTYgLi4uXG4ifQ== -->
+<pre><code>&#39;data.frame&#39;:   15829 obs. of  3 variables:
+ $ SpeciesName: chr  &quot;Song Sparrow&quot; &quot;&quot; &quot;Song Sparrow&quot; &quot;Field Sparrow&quot; ...
+ $ Month      : num  7 NA 7 7 7 7 7 7 7 7 ...
+ $ Day        : num  16 NA 16 16 16 16 16 16 16 16 ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQZXJmb3JtIGlubmVyIGpvaW5cbmpvaW5lZF9kYXRhIDwtIGlubmVyX2pvaW4oT3Jkd2F5QmlyZHNfY2xlYW5lZCwgT3Jkd2F5QmlyZHMsIGJ5ID0gYyhcIlNwZWNpZXNOYW1lXCIpKVxuYGBgIn0= -->
+<pre class="r"><code># Perform inner join
+joined_data &lt;- inner_join(OrdwayBirds_cleaned, OrdwayBirds, by = c(&quot;SpeciesName&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogRGV0ZWN0ZWQgYW4gdW5leHBlY3RlZCBtYW55LXRvLW1hbnkgcmVsYXRpb25zaGlwIGJldHdlZW4gYHhgIGFuZCBgeWAuXG4ifQ== -->
+<pre><code>Warning: Detected an unexpected many-to-many relationship between `x` and `y`.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNwZWN0IHRoZSByZXN1bHRpbmcgZGF0YVxuaGVhZChqb2luZWRfZGF0YSlcbmBgYCJ9 -->
+<pre class="r"><code># Inspect the resulting data
+head(joined_data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyA1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3MVNzVTdETUJBOTNEcFZBNjBxc1RMd0E3RkFnTlNSb1dLRG9RR3BxMGxOR3hIc3lIRkZzL0hsaFhOaVI4RlRGN0IwT3Q5N2ZucDNKeThYcTV0NEZRUEFBSWFFd0lEaUZlakw4ME15QjBTd09JRWhqRzNlNDZOenkyTE1NQ0pIbktWS2JpN1RrbXV0UHY4RkE1aGEvL3NMYU02eHVkTmRPZnpJL09kK3R5N2ZlZG12eFZQSlAwUUY3ZEtwQTAvVFVtUzVxSjZRYzlEb1VVbXpaWHN2Vy9DNkt4eFg5N2s2OEJuamFwbjNtbUNRcjdhYktHd29LM2psRy9KZ3ZPYUdzemR0K3dFNEJKS1JLazJ1SklwSS93dDFmMHNId0d3bmJTZnJKTnZ1NUh0eVBiY09EZC9HeE9Xb2Q2ZXRKL2tPVmhVSnVjbWwzeEl0K0tzb1hESEZrWnVKV2FsemFmd29pRmJNS01QOXV6aFRoVWVhNGVEd0EwMHM2bmc2QXdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["SpeciesName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Month.x"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Day.x"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Month.y"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Day.y"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"16","_rn_":"1"},{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"16","_rn_":"2"},{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"16","_rn_":"3"},{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"16","_rn_":"4"},{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"20","_rn_":"5"},{"1":"Song Sparrow","2":"7","3":"16","4":"7","5":"21","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKGpvaW5lZF9kYXRhKVxuYGBgIn0= -->
+<pre class="r"><code>str(joined_data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MTQ0NjUzMDkgb2JzLiBvZiAgNSB2YXJpYWJsZXM6XG4gJCBTcGVjaWVzTmFtZTogY2hyICBcIlNvbmcgU3BhcnJvd1wiIFwiU29uZyBTcGFycm93XCIgXCJTb25nIFNwYXJyb3dcIiBcIlNvbmcgU3BhcnJvd1wiIC4uLlxuICQgTW9udGgueCAgICA6IG51bSAgNyA3IDcgNyA3IDcgNyA3IDcgNyAuLi5cbiAkIERheS54ICAgICAgOiBudW0gIDE2IDE2IDE2IDE2IDE2IDE2IDE2IDE2IDE2IDE2IC4uLlxuICQgTW9udGgueSAgICA6IG51bSAgNyA3IDcgNyA3IDcgNyA4IDggOCAuLi5cbiAkIERheS55ICAgICAgOiBudW0gIDE2IDE2IDE2IDE2IDIwIDIxIDI3IDIgNCA1IC4uLlxuIn0= -->
+<pre><code>&#39;data.frame&#39;:   14465309 obs. of  5 variables:
+ $ SpeciesName: chr  &quot;Song Sparrow&quot; &quot;Song Sparrow&quot; &quot;Song Sparrow&quot; &quot;Song Sparrow&quot; ...
+ $ Month.x    : num  7 7 7 7 7 7 7 7 7 7 ...
+ $ Day.x      : num  16 16 16 16 16 16 16 16 16 16 ...
+ $ Month.y    : num  7 7 7 7 7 7 7 8 8 8 ...
+ $ Day.y      : num  16 16 16 16 20 21 27 2 4 5 ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShqb2luZWRfZGF0YSlcbmBgYCJ9 -->
+<pre class="r"><code>summary(joined_data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFNwZWNpZXNOYW1lICAgICAgICAgICBNb250aC54ICAgICAgICAgICBEYXkueCAgICAgICAgICAgIE1vbnRoLnkgICAgICBcbiBMZW5ndGg6MTQ0NjUzMDkgICAgTWluLiAgIDogMS4wMDAgICBNaW4uICAgOiAgIDEuMDAgICBNaW4uICAgOiAxLjAwMCAgXG4gQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46IDQuMDAwICAgMXN0IFF1LjogICA3LjAwICAgMXN0IFF1LjogNC4wMDAgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOiA5LjAwMCAgIE1lZGlhbiA6ICAxNS4wMCAgIE1lZGlhbiA6IDkuMDAwICBcbiAgICAgICAgICAgICAgICAgICAgTWVhbiAgIDogNy4yNjUgICBNZWFuICAgOiAgMTUuMTUgICBNZWFuICAgOiA3LjI2NSAgXG4gICAgICAgICAgICAgICAgICAgIDNyZCBRdS46MTAuMDAwICAgM3JkIFF1LjogIDIzLjAwICAgM3JkIFF1LjoxMC4wMDAgIFxuICAgICAgICAgICAgICAgICAgICBNYXguICAgOjI1LjAwMCAgIE1heC4gICA6MTk3NS4wMCAgIE1heC4gICA6MjUuMDAwICBcbiAgICAgICAgICAgICAgICAgICAgTkEncyAgIDoxNiAgICAgICBOQSdzICAgOjE2ICAgICAgICBOQSdzICAgOjE2ICAgICAgXG4gICAgIERheS55ICAgICAgICBcbiBNaW4uICAgOiAgIDEuMDAgIFxuIDFzdCBRdS46ICAgNy4wMCAgXG4gTWVkaWFuIDogIDE1LjAwICBcbiBNZWFuICAgOiAgMTUuMTUgIFxuIDNyZCBRdS46ICAyMy4wMCAgXG4gTWF4LiAgIDoxOTc1LjAwICBcbiBOQSdzICAgOjE2ICAgICAgIFxuIn0= -->
+<pre><code> SpeciesName           Month.x           Day.x            Month.y      
+ Length:14465309    Min.   : 1.000   Min.   :   1.00   Min.   : 1.000  
+ Class :character   1st Qu.: 4.000   1st Qu.:   7.00   1st Qu.: 4.000  
+ Mode  :character   Median : 9.000   Median :  15.00   Median : 9.000  
+                    Mean   : 7.265   Mean   :  15.15   Mean   : 7.265  
+                    3rd Qu.:10.000   3rd Qu.:  23.00   3rd Qu.:10.000  
+                    Max.   :25.000   Max.   :1975.00   Max.   :25.000  
+                    NA&#39;s   :16       NA&#39;s   :16        NA&#39;s   :16      
+     Day.y        
+ Min.   :   1.00  
+ 1st Qu.:   7.00  
+ Median :  15.00  
+ Mean   :  15.15  
+ 3rd Qu.:  23.00  
+ Max.   :1975.00  
+ NA&#39;s   :16       </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1859,19 +1897,19 @@ unique_species_cleaned &lt;- unique(OrdwayBirds_cleaned$SpeciesName)
 Ordway Natural History Study Area.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb3VudCBzaWdodGluZ3MgYnkgc3BlY2llcyBpbiBkZXNjZW5kaW5nIG9yZGVyXG5cblxuXG5cbiMgYSBoaW50IGluIHRoZSB0ZXh0IGJvb2sgcmVjb21tZW5kcyBkaXNwbGF5aW5nIHRoZSB0b3AgMTAgc3BlY2llcyB0byBjaG9vc2Ugb3VyIHRocmVzaG9sZFxuXG5cblxuIyBkZWZpbmUgYSBzaWdodGluZ3MgdGhyZXNob2xkOyBwcm9kdWNlIGEgdGFibGUgd2l0aCBvbmx5IGJpcmRzIGJlbG9uZ2luZyB0byBtYWpvciBzcGVjaWVzXG5cblxuXG5cbmBgYCJ9 -->
-<pre class="r"><code># count sightings by species in descending order
-
-
-
-
-# a hint in the text book recommends displaying the top 10 species to choose our threshold
-
-
-
-# define a sightings threshold; produce a table with only birds belonging to major species
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb3VudCBzaWdodGluZ3MgYnkgc3BlY2llcyBpbiBkZXNjZW5kaW5nIG9yZGVyXG5zcGVjaWVzX2NvdW50cyA8LSBqb2luZWRfZGF0YSAlPiVjb3VudChTcGVjaWVzLCBzb3J0ID0gVFJVRSlcblxuYGBgIn0= -->
+<pre class="r"><code># Count sightings by species in descending order
+species_counts &lt;- joined_data %&gt;%count(Species, sort = TRUE)
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYGNvdW50KClgOlxuISBNdXN0IGdyb3VwIGJ5IHZhcmlhYmxlcyBmb3VuZCBpbiBgLmRhdGFgLlxu4pyWIENvbHVtbiBgU3BlY2llc2AgaXMgbm90IGZvdW5kLlxuQmFja3RyYWNlOlxuIDEuIGpvaW5lZF9kYXRhICU+JSBjb3VudChTcGVjaWVzLCBzb3J0ID0gVFJVRSlcbiAzLiBkcGx5cjo6OmNvdW50LmRhdGEuZnJhbWUoLiwgU3BlY2llcywgc29ydCA9IFRSVUUpXG4ifQ== -->
+<pre><code>Error in `count()`:
+! Must group by variables found in `.data`.
+✖ Column `Species` is not found.
+Backtrace:
+ 1. joined_data %&gt;% count(Species, sort = TRUE)
+ 3. dplyr:::count.data.frame(., Species, sort = TRUE)</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1882,10 +1920,19 @@ species, and then construct a chart to tell the story of what time of
 year the various species appear.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmVwYXJlIGdseXBoLXJlYWR5IGRhdGEgdGFibGUgY2FsbGVkIGBCeU1vbnRoYFxuXG5cblxuYGBgIn0= -->
-<pre class="r"><code># prepare glyph-ready data table called `ByMonth`
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQcmVwYXJlIGdseXBoLXJlYWR5IGRhdGEgdGFibGUgY2FsbGVkIGBCeU1vbnRoYFxuQnlNb250aCA8LSBqb2luZWRfZGF0YSAlPiVncm91cF9ieShTcGVjaWVzTmFtZSwgTW9udGgpICU+JWNvdW50KClcblxuYGBgIn0= -->
+<pre class="r"><code># Prepare glyph-ready data table called `ByMonth`
+ByMonth &lt;- joined_data %&gt;%group_by(SpeciesName, Month) %&gt;%count()
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYGdyb3VwX2J5KClgOlxuISBNdXN0IGdyb3VwIGJ5IHZhcmlhYmxlcyBmb3VuZCBpbiBgLmRhdGFgLlxu4pyWIENvbHVtbiBgTW9udGhgIGlzIG5vdCBmb3VuZC5cbkJhY2t0cmFjZTpcbiAxLiBqb2luZWRfZGF0YSAlPiUgZ3JvdXBfYnkoU3BlY2llc05hbWUsIE1vbnRoKSAlPiUgY291bnQoKVxuIDQuIGRwbHlyOjo6Z3JvdXBfYnkuZGF0YS5mcmFtZSguLCBTcGVjaWVzTmFtZSwgTW9udGgpXG4ifQ== -->
+<pre><code>Error in `group_by()`:
+! Must group by variables found in `.data`.
+✖ Column `Month` is not found.
+Backtrace:
+ 1. joined_data %&gt;% group_by(SpeciesName, Month) %&gt;% count()
+ 4. dplyr:::group_by.data.frame(., SpeciesName, Month)</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Now use the ggplot template below to generate the desired graph.
@@ -1929,7 +1976,7 @@ months of the year?</h5>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWN0aXZpdHk6IEJpcmQgU3BlY2llcyIKYXV0aG9yOiAiWW91ciBOYW1lcyBIZXJlIgpkYXRlOiAiRFVFIERBVEUgIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpzYWRhc2QKIyBTZXQgVXAKCmBgYHtyfQoKIyBsb2FkIHBhY2thZ2VzCmxpYnJhcnkodGlkeXZlcnNlKQoKCiMgTG9hZCB0aGUgQmFieU5hbWVzIGRhdGEgaW50byBSU3R1ZGlvIGVudmlyb25tZW50IChmcm9tIGRjRGF0YSBwYWNrYWdlKQpkYXRhKCJPcmR3YXlCaXJkcyIsIHBhY2thZ2UgPSAiZGNEYXRhIikKCiMgTG9hZCB0aGUgYE9yZHdheUJpcmRzYCBkYXRhIHNldCBpbnRvIHlvdXIgUlN0dWRpbyBlbnZpcm9ubWVudCBmcm9tIHRoZSBgZGNEYXRhYCBwYWNrYWdlCgpPcmR3YXlCaXJkcyA8LQogIE9yZHdheUJpcmRzICU+JQogIHNlbGVjdCggU3BlY2llc05hbWUsIE1vbnRoLCBEYXkgKSAlPiUKICBtdXRhdGUoIE1vbnRoID0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoTW9udGgpKSwgCiAgICAgICAgICBEYXkgPSBhcy5udW1lcmljKGFzLmNoYXJhY3RlcihEYXkpKSkKCgojIFNob3cgYSBmZXcgY29tbWFuZHMgdXNlZCB0byBpbnNwZWN0IHRoZSBkYXRhIHNldCBhIGZldyBkaWZmZXJlbnQgd2F5cwoKaGVhZChPcmR3YXlCaXJkcykKc3RyKE9yZHdheUJpcmRzKQpzdW1tYXJ5KE9yZHdheUJpcmRzKQoKYGBgCgojIEFjdGl2aXR5CgpXaGVuIHlvdSdyZSBmaW5pc2hlZCB3aXRoIHRoaXMgYWN0aXZpdHksIHlvdSB3aWxsIGhhdmUgYSBncmFwaCB0aGF0IHNob3dzIHdoYXQgdGltZSBvZiB5ZWFyIHZhcmlvdXMgc3BlY2llcyBhcHBlYXIgYXQgdGhlIEthdGhlcmluZSBPcmR3YXkgTmF0dXJhbCBIaXN0b3J5IFN0dWR5IEFyZWEgaW4gSW52ZXIgR3JvdmUgSGVpZ2h0cywgTU4uCgojIyMgU3RlcCAwCgpCZWZvcmUgd2UgYmVnaW4sIHRoZSBib29rIGdpdmVzIHVzIHNvbWUgaW5zdHJ1Y3Rpb25zIHRvIHNlbGVjdCBhIGZldyBrZXkgdmFyaWFibGVzIGFuZCBjbGVhbiB1cCB0aGUgZGF0ZSBmb3JtYXR0aW5nLiAgVXNlIHRoZSBjb21tYW5kcyBnaXZlbiBpbiB0aGUgYm9vaywgYnV0IGJlIHN1cmUgdG8gc3R1ZHkgdGhlIGZ1bmN0aW9ucyB1c2VkIHNvIHlvdSBrbm93IHdoYXQgaXMgaGFwcGVuaW5nLiAgSW4gdGhpcyBjYXNlLCB3ZSBzZWxlY3QgYFNwZWNpZXNOYW1lYCwgYE1vbnRoYCwgYW5kIGBEYXlgLiBUaGVuIGEgYG11dGF0ZSgpYCBjb21tYW5kIGNvbnZlcnRzIGVhY2ggdmFyaWFibGUgdG8gY2hhcmFjdGVyLCBhbmQgdGhlbiBjb252ZXJ0cyB0aGUgcmVzdWx0aW5nICJjaGFyYWN0ZXIgc3RyaW5nIiB0byBhIG51bWJlci4KCmBgYHtyfQoKT3Jkd2F5QmlyZHNfY2xlYW5lZCA8LSBPcmR3YXlCaXJkcyAlPiUKICBzZWxlY3QoU3BlY2llc05hbWUsIE1vbnRoLCBEYXkpICU+JQogIG11dGF0ZShNb250aCA9IGFzLm51bWVyaWMoYXMuY2hhcmFjdGVyKE1vbnRoKSksIAogICAgICAgICBEYXkgPSBhcy5udW1lcmljKGFzLmNoYXJhY3RlcihEYXkpKSkKCiMgSW5zcGVjdCByZXN1bHRpbmcgZGF0YQpoZWFkKE9yZHdheUJpcmRzX2NsZWFuZWQpCgoKCgoKYGBgCgoKCiMjIyBTdGVwIDEKCgoKCmBgYHtyfQpgYGAKCgpgYGB7cn0KIyBVbmlxdWUgc3BlY2llcyBpbiBvcmlnaW5hbCBkYXRhIChpbmNsdWRpbmcgbWlzLXNwZWxsaW5ncykKdW5pcXVlX3NwZWNpZXNfb3JpZ2luYWwgPC0gdW5pcXVlKE9yZHdheUJpcmRzJFNwZWNpZXNOYW1lKQoKIyBVbmlxdWUgc3BlY2llcyBpbiB0aGUgY2xlYW4gbGlzdAp1bmlxdWVfc3BlY2llc19jbGVhbmVkIDwtIHVuaXF1ZShPcmR3YXlCaXJkc19jbGVhbmVkJFNwZWNpZXNOYW1lKQoKCmBgYAoKCiMjIyBTdGVwIDIKICAKCgoKYGBge3J9CiMgaW5zcGVjdCBPcmR3YXlTcGVjaWVzTmFtZXMKCgojIGlubmVyIGpvaW4KCgoKCiMgaW5zcGVjdCB0aGUgZGF0YSBhZnRlciB0aGUgam9pbgoKCmBgYAoKCiMjIyBTdGVwIDMKCldlIHdhbnQgdG8gaWRlbnRpZnkgdGhlIHRvcCA1LTYgYmlyZCBzcGVjaWVzIHNpZ2h0ZWQgYXQgdGhlIEthdGhlcmluZSBPcmR3YXkgTmF0dXJhbCBIaXN0b3J5IFN0dWR5IEFyZWEuCgpgYGB7cn0KIyBjb3VudCBzaWdodGluZ3MgYnkgc3BlY2llcyBpbiBkZXNjZW5kaW5nIG9yZGVyCgoKCgojIGEgaGludCBpbiB0aGUgdGV4dCBib29rIHJlY29tbWVuZHMgZGlzcGxheWluZyB0aGUgdG9wIDEwIHNwZWNpZXMgdG8gY2hvb3NlIG91ciB0aHJlc2hvbGQKCgoKIyBkZWZpbmUgYSBzaWdodGluZ3MgdGhyZXNob2xkOyBwcm9kdWNlIGEgdGFibGUgd2l0aCBvbmx5IGJpcmRzIGJlbG9uZ2luZyB0byBtYWpvciBzcGVjaWVzCgoKCgpgYGAKCgojIyMgU3RlcCA0CgpXZSBub3cgd2FudCB0byBwcm9kdWNlIGEgbW9udGgtYnktbW9udGggY291bnQgZm9yIGVhY2ggb2YgdGhlIG1ham9yIHNwZWNpZXMsIGFuZCB0aGVuIGNvbnN0cnVjdCBhIGNoYXJ0IHRvIHRlbGwgdGhlIHN0b3J5IG9mIHdoYXQgdGltZSBvZiB5ZWFyIHRoZSB2YXJpb3VzIHNwZWNpZXMgYXBwZWFyLgoKYGBge3J9CiMgcHJlcGFyZSBnbHlwaC1yZWFkeSBkYXRhIHRhYmxlIGNhbGxlZCBgQnlNb250aGAKCgoKYGBgCgpOb3cgdXNlIHRoZSBnZ3Bsb3QgdGVtcGxhdGUgYmVsb3cgdG8gZ2VuZXJhdGUgdGhlIGRlc2lyZWQgZ3JhcGguIChSZW1hcmsgeW91IGNhbiBhbHNvIHVzZSBlc3F1aXNzZXIgb3IgbXBsb3QgdG8gY3JlYXRlIGEgbGluZSBjaGFydCBpbnN0ZWFkIG9mIHRoZSBiYXJjaGFydCkKCgoKYGBge3J9CiMgZ2dwbG90IGNvbW1hbmRzCgpCeU1vbnRoICU+JSAKICBnZ3Bsb3QoYWVzKHggPSBNb250aCwgeSA9IGNvdW50LCBjb2xvciA9IFNwZWNpZXMpKSArIAogIGdlb21fbGluZSgpCgpCeU1vbnRoICU+JSBnZ3Bsb3QoYWVzKHg9TW9udGgseT1jb3VudCAsZmlsbD1TcGVjaWVzKSkgKwogIGdlb21fYmFyKHN0YXQ9J2lkZW50aXR5Jyxwb3NpdGlvbj0nc3RhY2snLCB3aWR0aD0uOSkgCgpgYGAKCkFjY29yZGluZyB0byB0aGUgZ3JhcGgsIHdlIGNhbiBhbnN3ZXIgdGhlIHF1ZXN0aW9ucyBwb3NlZDoKCiMjIyMjIDEuIFdoaWNoIHNwZWNpZXMgYXJlIHByZXNlbnQgeWVhci1yb3VuZD8gIAoKCgojIyMjIyAyLiBXaGljaCBzcGVjaWVzIGFyZSBtaWdyYXRvcnksIHRoYXQgaXMsIHByaW1hcmlseSBwcmVzZW50IGluIG9uZSBvciB0d28gc2Vhc29ucz8KCgoKCiMjIyMjIDMuIFdoYXQgaXMgdGhlIHBlYWsgbW9udGggZm9yIGVhY2ggbWFqb3Igc3BlY2llcz8gKGJ1bGxldCBsaXN0KQoKCgoKIyMjIyMgNC4gV2hpY2ggbWFqb3Igc3BlY2llcyBhcmUgc2VlbiBpbiBnb29kIG51bWJlcnMgZm9yIGF0IGxlYXN0IDYgbW9udGhzIG9mIHRoZSB5ZWFyPwoKCgpgYGB7cn0KCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWN0aXZpdHk6IEJpcmQgU3BlY2llcyIKYXV0aG9yOiAiWW91ciBOYW1lcyBIZXJlIgpkYXRlOiAiRFVFIERBVEUgIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgoKIyBTZXQgVXAKCmBgYHtyfQoKIyBsb2FkIHBhY2thZ2VzCmxpYnJhcnkodGlkeXZlcnNlKQoKCiMgTG9hZCB0aGUgQmFieU5hbWVzIGRhdGEgaW50byBSU3R1ZGlvIGVudmlyb25tZW50IChmcm9tIGRjRGF0YSBwYWNrYWdlKQpkYXRhKCJPcmR3YXlCaXJkcyIsIHBhY2thZ2UgPSAiZGNEYXRhIikKCiMgTG9hZCB0aGUgYE9yZHdheUJpcmRzYCBkYXRhIHNldCBpbnRvIHlvdXIgUlN0dWRpbyBlbnZpcm9ubWVudCBmcm9tIHRoZSBgZGNEYXRhYCBwYWNrYWdlCgpPcmR3YXlCaXJkcyA8LQogIE9yZHdheUJpcmRzICU+JQogIHNlbGVjdCggU3BlY2llc05hbWUsIE1vbnRoLCBEYXkgKSAlPiUKICBtdXRhdGUoIE1vbnRoID0gYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoTW9udGgpKSwgCiAgICAgICAgICBEYXkgPSBhcy5udW1lcmljKGFzLmNoYXJhY3RlcihEYXkpKSkKCgojIFNob3cgYSBmZXcgY29tbWFuZHMgdXNlZCB0byBpbnNwZWN0IHRoZSBkYXRhIHNldCBhIGZldyBkaWZmZXJlbnQgd2F5cwoKaGVhZChPcmR3YXlCaXJkcykKc3RyKE9yZHdheUJpcmRzKQpzdW1tYXJ5KE9yZHdheUJpcmRzKQoKYGBgCgojIEFjdGl2aXR5CgpXaGVuIHlvdSdyZSBmaW5pc2hlZCB3aXRoIHRoaXMgYWN0aXZpdHksIHlvdSB3aWxsIGhhdmUgYSBncmFwaCB0aGF0IHNob3dzIHdoYXQgdGltZSBvZiB5ZWFyIHZhcmlvdXMgc3BlY2llcyBhcHBlYXIgYXQgdGhlIEthdGhlcmluZSBPcmR3YXkgTmF0dXJhbCBIaXN0b3J5IFN0dWR5IEFyZWEgaW4gSW52ZXIgR3JvdmUgSGVpZ2h0cywgTU4uCgojIyMgU3RlcCAwCgpCZWZvcmUgd2UgYmVnaW4sIHRoZSBib29rIGdpdmVzIHVzIHNvbWUgaW5zdHJ1Y3Rpb25zIHRvIHNlbGVjdCBhIGZldyBrZXkgdmFyaWFibGVzIGFuZCBjbGVhbiB1cCB0aGUgZGF0ZSBmb3JtYXR0aW5nLiAgVXNlIHRoZSBjb21tYW5kcyBnaXZlbiBpbiB0aGUgYm9vaywgYnV0IGJlIHN1cmUgdG8gc3R1ZHkgdGhlIGZ1bmN0aW9ucyB1c2VkIHNvIHlvdSBrbm93IHdoYXQgaXMgaGFwcGVuaW5nLiAgSW4gdGhpcyBjYXNlLCB3ZSBzZWxlY3QgYFNwZWNpZXNOYW1lYCwgYE1vbnRoYCwgYW5kIGBEYXlgLiBUaGVuIGEgYG11dGF0ZSgpYCBjb21tYW5kIGNvbnZlcnRzIGVhY2ggdmFyaWFibGUgdG8gY2hhcmFjdGVyLCBhbmQgdGhlbiBjb252ZXJ0cyB0aGUgcmVzdWx0aW5nICJjaGFyYWN0ZXIgc3RyaW5nIiB0byBhIG51bWJlci4KCmBgYHtyfQoKT3Jkd2F5QmlyZHNfY2xlYW5lZCA8LSBPcmR3YXlCaXJkcyAlPiUKICBzZWxlY3QoU3BlY2llc05hbWUsIE1vbnRoLCBEYXkpICU+JQogIG11dGF0ZShNb250aCA9IGFzLm51bWVyaWMoYXMuY2hhcmFjdGVyKE1vbnRoKSksIAogICAgICAgICBEYXkgPSBhcy5udW1lcmljKGFzLmNoYXJhY3RlcihEYXkpKSkKCiMgSW5zcGVjdCByZXN1bHRpbmcgZGF0YQpoZWFkKE9yZHdheUJpcmRzX2NsZWFuZWQpCgoKCgoKYGBgCgoKCiMjIyBTdGVwIDEKCgoKCgoKCgpgYGB7cn0KIyBVbmlxdWUgc3BlY2llcyBpbiBvcmlnaW5hbCBkYXRhIChpbmNsdWRpbmcgbWlzLXNwZWxsaW5ncykKdW5pcXVlX3NwZWNpZXNfb3JpZ2luYWwgPC0gdW5pcXVlKE9yZHdheUJpcmRzJFNwZWNpZXNOYW1lKQoKIyBVbmlxdWUgc3BlY2llcyBpbiB0aGUgY2xlYW4gbGlzdAp1bmlxdWVfc3BlY2llc19jbGVhbmVkIDwtIHVuaXF1ZShPcmR3YXlCaXJkc19jbGVhbmVkJFNwZWNpZXNOYW1lKQoKCmBgYAoKCiMjIyBTdGVwIDIKICAKCgoKYGBge3J9CiMgTG9hZCB0aGUgIGRhdGFzZXQgaW50byB5b3VyIFJTdHVkaW8gZW52aXJvbm1lbnQKZGF0YSgiT3Jkd2F5QmlyZHMiKQoKIyBJbnNwZWN0ICBkYXRhc2V0CmhlYWQoT3Jkd2F5QmlyZHMpCnN0cihPcmR3YXlCaXJkcykKCiMgUGVyZm9ybSBpbm5lciBqb2luCmpvaW5lZF9kYXRhIDwtIGlubmVyX2pvaW4oT3Jkd2F5QmlyZHNfY2xlYW5lZCwgT3Jkd2F5QmlyZHMsIGJ5ID0gYygiU3BlY2llc05hbWUiKSkKCiMgSW5zcGVjdCB0aGUgcmVzdWx0aW5nIGRhdGEKaGVhZChqb2luZWRfZGF0YSkKc3RyKGpvaW5lZF9kYXRhKQpzdW1tYXJ5KGpvaW5lZF9kYXRhKQoKCgpgYGAKCgojIyMgU3RlcCAzCgpXZSB3YW50IHRvIGlkZW50aWZ5IHRoZSB0b3AgNS02IGJpcmQgc3BlY2llcyBzaWdodGVkIGF0IHRoZSBLYXRoZXJpbmUgT3Jkd2F5IE5hdHVyYWwgSGlzdG9yeSBTdHVkeSBBcmVhLgoKYGBge3J9CmxpYnJhcnkoZHBseXIpCmxpYnJhcnkodGlkeXZlcnNlKQojIENvdW50IHNpZ2h0aW5ncyBieSBzcGVjaWVzIGluIGRlc2NlbmRpbmcgb3JkZXIKCnNwZWNpZXNfY291bnRzIDwtIGpvaW5lZF9kYXRhICU+JSBjb3VudChTcGVjaWVzTmFtZSwgc29ydCA9IFRSVUUpCiMgRGlzcGxheSB0aGUgdG9wIDEwIHNwZWNpZXMKdG9wX3NwZWNpZXMgPC0gaGVhZChzcGVjaWVzX2NvdW50cywgMTApCgoKCiMgZGVmaW5lIGEgc2lnaHRpbmdzIHRocmVzaG9sZDsgcHJvZHVjZSBhIHRhYmxlIHdpdGggb25seSBiaXJkcyBiZWxvbmdpbmcgdG8gbWFqb3Igc3BlY2llcwpzaWdodGluZ3NfdGhyZXNob2xkIDwtIDEwCm1ham9yX3NwZWNpZXMgPC0gdG9wX3NwZWNpZXMgJT4lCiAgZmlsdGVyKG4gPj0gc2lnaHRpbmdzX3RocmVzaG9sZCkKCgoKYGBgCgoKIyMjIFN0ZXAgNAoKV2Ugbm93IHdhbnQgdG8gcHJvZHVjZSBhIG1vbnRoLWJ5LW1vbnRoIGNvdW50IGZvciBlYWNoIG9mIHRoZSBtYWpvciBzcGVjaWVzLCBhbmQgdGhlbiBjb25zdHJ1Y3QgYSBjaGFydCB0byB0ZWxsIHRoZSBzdG9yeSBvZiB3aGF0IHRpbWUgb2YgeWVhciB0aGUgdmFyaW91cyBzcGVjaWVzIGFwcGVhci4KCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShkcGx5cikKIyBQcmVwYXJlIGdseXBoLXJlYWR5IGRhdGEgdGFibGUgY2FsbGVkIGBCeU1vbnRoYApCeU1vbnRoIDwtIGpvaW5lZF9kYXRhICU+JWdyb3VwX2J5KFNwZWNpZXNOYW1lLCBNb250aCkgJT4lY291bnQoKQoKCgojIFVzZSB0aGUgZ2dwbG90IHRlbXBsYXRlIHRvIGdlbmVyYXRlIHRoZSBkZXNpcmVkIGdyYXBoCmdncGxvdChCeU1vbnRoLCBhZXMoeCA9IE1vbnRoLCB5ID0gbiwgZmlsbCA9IFNwZWNpZXNOYW1lKSkgKwogIGdlb21fYmFyKHN0YXQgPSAiaWRlbnRpdHkiLCBwb3NpdGlvbiA9ICJzdGFjayIsIHdpZHRoID0gMC45KSArCiAgbGFicyh4ID0gIk1vbnRoIiwgeSA9ICJDb3VudCIsIHRpdGxlID0gIk1vbnRobHkgQmlyZCBTaWdodGluZ3MiKSArCiAgdGhlbWVfbWluaW1hbCgpCgoKCgpgYGAKCk5vdyB1c2UgdGhlIGdncGxvdCB0ZW1wbGF0ZSBiZWxvdyB0byBnZW5lcmF0ZSB0aGUgZGVzaXJlZCBncmFwaC4gKFJlbWFyayB5b3UgY2FuIGFsc28gdXNlIGVzcXVpc3NlciBvciBtcGxvdCB0byBjcmVhdGUgYSBsaW5lIGNoYXJ0IGluc3RlYWQgb2YgdGhlIGJhcmNoYXJ0KQoKCgpgYGB7cn0KIyBnZ3Bsb3QgY29tbWFuZHMKCkJ5TW9udGggJT4lIAogIGdncGxvdChhZXMoeCA9IE1vbnRoLCB5ID0gY291bnQsIGNvbG9yID0gU3BlY2llcykpICsgCiAgZ2VvbV9saW5lKCkKCkJ5TW9udGggJT4lIGdncGxvdChhZXMoeD1Nb250aCx5PWNvdW50ICxmaWxsPVNwZWNpZXMpKSArCiAgZ2VvbV9iYXIoc3RhdD0naWRlbnRpdHknLHBvc2l0aW9uPSdzdGFjaycsIHdpZHRoPS45KSAKCmBgYAoKQWNjb3JkaW5nIHRvIHRoZSBncmFwaCwgd2UgY2FuIGFuc3dlciB0aGUgcXVlc3Rpb25zIHBvc2VkOgoKIyMjIyMgMS4gV2hpY2ggc3BlY2llcyBhcmUgcHJlc2VudCB5ZWFyLXJvdW5kPyAgCgoKCiMjIyMjIDIuIFdoaWNoIHNwZWNpZXMgYXJlIG1pZ3JhdG9yeSwgdGhhdCBpcywgcHJpbWFyaWx5IHByZXNlbnQgaW4gb25lIG9yIHR3byBzZWFzb25zPwoKCgoKIyMjIyMgMy4gV2hhdCBpcyB0aGUgcGVhayBtb250aCBmb3IgZWFjaCBtYWpvciBzcGVjaWVzPyAoYnVsbGV0IGxpc3QpCgoKCgojIyMjIyA0LiBXaGljaCBtYWpvciBzcGVjaWVzIGFyZSBzZWVuIGluIGdvb2QgbnVtYmVycyBmb3IgYXQgbGVhc3QgNiBtb250aHMgb2YgdGhlIHllYXI/CgoKCmBgYHtyfQoKYGBgCgo=</div>
 
 
 
